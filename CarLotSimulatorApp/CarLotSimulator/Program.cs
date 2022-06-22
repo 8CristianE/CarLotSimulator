@@ -7,6 +7,8 @@ namespace CarLotSimulator
         static void Main(string[] args)
         {
             var carLot = new CarLot();
+
+
             //TODO
 
             //Create a seperate class file called Car
@@ -20,6 +22,8 @@ namespace CarLotSimulator
             //Call each of the methods for each car
 
             var Car1 = new Car();
+            Console.WriteLine($"Cars in CarsLot:{ CarLot.numberCars}");
+            Console.WriteLine();
             Car1.Year = 2020;
             Car1.Make = "Ford";
             Car1.Model = "F-150";
@@ -27,7 +31,7 @@ namespace CarLotSimulator
             Car1.HonkNoise = "Honk";
             Car1.IsDrivable = true;
 
-            carLot.ParkingLot.Add(Car1);
+            // carLot.ParkingLot.Add(Car1);
 
 
             var Car2 = new Car()
@@ -41,12 +45,17 @@ namespace CarLotSimulator
             };
 
             carLot.ParkingLot.Add(Car2);
+            Console.WriteLine($"Cars in CarsLot:{ CarLot.numberCars}");
+            Console.WriteLine();
 
 
 
-            var car3 = new Car(1923, "Ford", "Model T", " vroom", "beep", false);
+            var car3 = new Car(1923, "Ford", "Model T", "vroom", "beep", false);
             carLot.ParkingLot.Add(car3);
-            
+            Console.WriteLine($"Cars in CarsLot:{ CarLot.numberCars}");
+            Console.WriteLine();
+
+
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
@@ -56,9 +65,9 @@ namespace CarLotSimulator
             //Create a CarLot class
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            //At the   end iterate through the list printing each of car's Year, Make, and Model to the console
 
-            foreach(var car in carLot.ParkingLot)
+            foreach (var car in CarLot.StaticParkingLot)
             {
                 Console.WriteLine($"{car.Year} {car.Make} {car.Model}");
                 car.MakeEngineNoise();
